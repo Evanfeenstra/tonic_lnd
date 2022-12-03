@@ -20,6 +20,7 @@ rustls-pemfile = "1.0.0"
 hex = "0.4.3"
 tokio = { version = "1.7.1", features = ["fs"] }
 tracing = { version = "0.1", features = ["log"], optional = true }
+serde = { version = "1", features = ["derive"] }
 
 [build-dependencies]
 tonic-build = "0.5.2"

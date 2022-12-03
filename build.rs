@@ -7,7 +7,7 @@ fn main() -> std::io::Result<()> {
             let mut lnd_rpc_dir = PathBuf::from(lnd_repo_path);
             lnd_rpc_dir.push("lnrpc");
             lnd_rpc_dir
-        },
+        }
         None => PathBuf::from("vendor"),
     };
 
@@ -32,6 +32,9 @@ fn main() -> std::io::Result<()> {
         .build_client(true)
         .build_server(false)
         .format(false)
+        .type_attribute(".lnrpc.Feature", "#[derive(serde::Serialize)]")
+        .type_attribute(".lnrpc.Chain", "#[derive(serde::Serialize)]")
+        .type_attribute(".lnrpc.GetInfoResponse", "#[derive(serde::Serialize)]")
         .compile(&proto_paths, &[dir])?;
     Ok(())
 }
