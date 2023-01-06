@@ -35,6 +35,9 @@ fn main() -> std::io::Result<()> {
         .type_attribute(".lnrpc.Feature", "#[derive(serde::Serialize)]")
         .type_attribute(".lnrpc.Chain", "#[derive(serde::Serialize)]")
         .type_attribute(".lnrpc.GetInfoResponse", "#[derive(serde::Serialize)]")
+        .type_attribute(".lnrpc.Channel", "#[derive(serde::Serialize)]")
+        .type_attribute(".lnrpc.ConnectPeerResponse", "#[derive(serde::Serialize)]")
+        .type_attribute(".lnrpc.ChannelPoint", "#[derive(serde::Serialize)]")
         .compile(&proto_paths, &[dir])?;
     Ok(())
 }
