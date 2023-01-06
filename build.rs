@@ -38,6 +38,8 @@ fn main() -> std::io::Result<()> {
         .type_attribute(".lnrpc.Channel", "#[derive(serde::Serialize)]")
         .type_attribute(".lnrpc.ConnectPeerResponse", "#[derive(serde::Serialize)]")
         .type_attribute(".lnrpc.ChannelPoint", "#[derive(serde::Serialize)]")
+        .type_attribute(".lnrpc.ChannelConstraints", "#[derive(serde::Serialize)]")
+        .type_attribute(".lnrpc.HTLC", "#[derive(serde::Serialize)]")
         .compile(&proto_paths, &[dir])?;
     Ok(())
 }
