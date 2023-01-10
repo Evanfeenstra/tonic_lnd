@@ -45,6 +45,7 @@ fn main() -> std::io::Result<()> {
             ".lnrpc.WalletBalanceResponse",
             "#[derive(serde::Serialize)]",
         )
+        .type_attribute(".lnrpc.WalletAccountBalance", "#[derive(serde::Serialize)]")
         .compile(&proto_paths, &[dir])?;
     Ok(())
 }
