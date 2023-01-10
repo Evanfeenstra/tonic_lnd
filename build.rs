@@ -40,6 +40,11 @@ fn main() -> std::io::Result<()> {
         .type_attribute(".lnrpc.ChannelPoint", "#[derive(serde::Serialize)]")
         .type_attribute(".lnrpc.ChannelConstraints", "#[derive(serde::Serialize)]")
         .type_attribute(".lnrpc.HTLC", "#[derive(serde::Serialize)]")
+        .type_attribute(".lnrpc.NewAddressResponse", "#[derive(serde::Serialize)]")
+        .type_attribute(
+            ".lnrpc.WalletBalanceResponse",
+            "#[derive(serde::Serialize)]",
+        )
         .compile(&proto_paths, &[dir])?;
     Ok(())
 }
