@@ -46,6 +46,9 @@ fn main() -> std::io::Result<()> {
             "#[derive(serde::Serialize)]",
         )
         .type_attribute(".lnrpc.WalletAccountBalance", "#[derive(serde::Serialize)]")
+        .type_attribute(".lnrpc.ListPeersResponse", "#[derive(serde::Serialize)]")
+        .type_attribute(".lnrpc.Peer", "#[derive(serde::Serialize)]")
+        .type_attribute(".lnrpc.TimestampedError", "#[derive(serde::Serialize)]")
         .compile(&proto_paths, &[dir])?;
     Ok(())
 }
