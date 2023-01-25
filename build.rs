@@ -49,6 +49,12 @@ fn main() -> std::io::Result<()> {
         .type_attribute(".lnrpc.ListPeersResponse", "#[derive(serde::Serialize)]")
         .type_attribute(".lnrpc.Peer", "#[derive(serde::Serialize)]")
         .type_attribute(".lnrpc.TimestampedError", "#[derive(serde::Serialize)]")
+        .type_attribute(".lnrpc.AddInvoiceResponse", "#[derive(serde::Serialize)]")
+        .type_attribute(".lnrpc.SendResponse", "#[derive(serde::Serialize)]")
+        .type_attribute(".lnrpc.Route", "#[derive(serde::Serialize)]")
+        .type_attribute(".lnrpc.Hop", "#[derive(serde::Serialize)]")
+        .type_attribute(".lnrpc.MPPRecord", "#[derive(serde::Serialize)]")
+        .type_attribute(".lnrpc.AMPRecord", "#[derive(serde::Serialize)]")
         .compile(&proto_paths, &[dir])?;
     Ok(())
 }
