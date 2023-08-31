@@ -69,6 +69,10 @@ fn main() -> std::io::Result<()> {
         .type_attribute(".lnrpc.Failure", "#[derive(serde::Serialize)]")
         .type_attribute(".lnrpc.PaymentFailureReason", "#[derive(serde::Serialize)]")
         .type_attribute(".lnrpc.ChannelUpdate", "#[derive(serde::Serialize)]")
+        .type_attribute(
+            ".lnrpc.PendingChannelsResponse",
+            "#[derive(serde::Serialize)]",
+        )
         .compile(&proto_paths, &[dir])?;
     Ok(())
 }
