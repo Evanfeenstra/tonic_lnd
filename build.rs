@@ -73,6 +73,7 @@ fn main() -> std::io::Result<()> {
             ".lnrpc.PendingChannelsResponse",
             "#[derive(serde::Serialize)]",
         )
+        .type_attribute(".lnrpc.PendingHTLC", "#[derive(serde::Serialize)]")
         .compile(&proto_paths, &[dir])?;
     Ok(())
 }
